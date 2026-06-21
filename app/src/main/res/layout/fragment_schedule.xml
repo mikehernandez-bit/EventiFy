@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/eventify_background"
+    android:paddingStart="20dp"
+    android:paddingTop="18dp"
+    android:paddingEnd="20dp"
+    tools:context=".ui.fragments.ScheduleFragment">
+
+    <ImageButton
+        android:id="@+id/btnScheduleMenu"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/common_menu"
+        android:padding="10dp"
+        android:src="@drawable/ic_eventify_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/eventify_text_primary" />
+
+    <TextView
+        android:id="@+id/tvScheduleTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/schedule_title"
+        android:textColor="@color/ColorPrimaryDark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/btnScheduleMenu"
+        app:layout_constraintEnd_toStartOf="@id/btnScheduleFilter"
+        app:layout_constraintStart_toEndOf="@id/btnScheduleMenu"
+        app:layout_constraintTop_toTopOf="@id/btnScheduleMenu"
+        tools:text="Cronograma" />
+
+    <ImageButton
+        android:id="@+id/btnScheduleFilter"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/common_filter"
+        android:padding="10dp"
+        android:src="@drawable/ic_eventify_filter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/eventify_text_primary" />
+
+    <TextView
+        android:id="@+id/tvScheduleMonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="@string/schedule_month"
+        android:textColor="@color/eventify_text_primary"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnScheduleMenu"
+        tools:text="MAYO 2026" />
+
+    <HorizontalScrollView
+        android:id="@+id/hsvScheduleDays"
+        android:layout_width="0dp"
+        android:layout_height="74dp"
+        android:layout_marginTop="10dp"
+        android:clipToPadding="false"
+        android:overScrollMode="never"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvScheduleMonth">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="48dp"
+                android:layout_height="62dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_soft_card"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/schedule_monday"
+                    android:textColor="@color/eventify_text_secondary"
+                    android:textSize="10sp"
+                    tools:text="LUN" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/schedule_day_12"
+                    android:textColor="@color/eventify_text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="12" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="48dp"
+                android:layout_height="62dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_soft_card"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/schedule_tuesday"
+                    android:textColor="@color/eventify_text_secondary"
+                    android:textSize="10sp"
+                    tools:text="MAR" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/schedule_day_13"
+                    android:textColor="@color/eventify_text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="13" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="48dp"
+                android:layout_height="62dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_soft_card"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/schedule_wednesday"
+                    android:textColor="@color/eventify_text_secondary"
+                    android:textSize="10sp"
+                    tools:text="MI\u00c9" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/schedule_day_14"
+                    android:textColor="@color/eventify_text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="14" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="52dp"
+                android:layout_height="66dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_chip_selected"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/schedule_thursday"
+                    android:textColor="@color/white"
+                    android:textSize="10sp"
+                    tools:text="JUE" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/schedule_day_15"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    android:textStyle="bold"
+                    tools:text="15" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="48dp"
+                android:layout_height="62dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_soft_card"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/schedule_friday"
+                    android:textColor="@color/eventify_text_secondary"
+                    android:textSize="10sp"
+                    tools:text="VIE" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/schedule_day_16"
+                    android:textColor="@color/eventify_text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="16" />
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="48dp"
+                android:layout_height="62dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/bg_soft_card"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/schedule_saturday"
+                    android:textColor="@color/eventify_text_secondary"
+                    android:textSize="10sp"
+                    tools:text="S\u00c1B" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/schedule_day_17"
+                    android:textColor="@color/eventify_text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:text="17" />
+            </LinearLayout>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSchedule"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingTop="10dp"
+        android:paddingBottom="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hsvScheduleDays"
+        tools:itemCount="4"
+        tools:listitem="@layout/item_schedule" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

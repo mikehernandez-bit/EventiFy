@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Eventify</string>
+    <string name="saludos">Hola Mundo</string>
+    <string name="hello_blank_fragment">Fragmento sin contenido</string>
+
+    <string name="common_menu">Abrir men&#250;</string>
+    <string name="common_notifications">Notificaciones</string>
+    <string name="common_search">Buscar</string>
+    <string name="common_filter">Filtrar</string>
+    <string name="common_close">Cerrar</string>
+    <string name="common_share">Compartir</string>
+    <string name="common_next">Ver detalle</string>
+
+    <string name="nav_home">Inicio</string>
+    <string name="nav_schedule">Cronograma</string>
+    <string name="nav_speakers">Ponentes</string>
+    <string name="nav_ubication">Ubicaci&#243;n</string>
+
+    <string name="splash_title">EVENTIFY</string>
+    <string name="splash_subtitle">Tu gu&#237;a de eventos tecnol&#243;gicos</string>
+    <string name="splash_logo_description">Logo de Eventify</string>
+
+    <string name="home_title">EVENTIFY</string>
+    <string name="home_hero_title">DevFest 2026</string>
+    <string name="home_hero_subtitle">El evento tecnol&#243;gico que conecta ideas, comunidades y futuro.</string>
+    <string name="home_cta">Ver m&#225;s</string>
+    <string name="home_featured_title">Eventos destacados</string>
+    <string name="home_view_all">Ver todos</string>
+    <string name="event_devfest">DevFest 2026</string>
+    <string name="event_devfest_date">15 - 16 de Mayo, 2026</string>
+    <string name="event_devfest_place">Lima, Per&#250;</string>
+    <string name="event_android_summit">Android Summit</string>
+    <string name="event_android_summit_date">20 - 21 de Julio, 2026</string>
+    <string name="event_android_summit_place">Bogot&#225;, Colombia</string>
+    <string name="event_kotlin_conf">Kotlin Conf</string>
+    <string name="event_kotlin_conf_date">10 de Junio, 2026</string>
+    <string name="event_kotlin_conf_place">Virtual</string>
+
+    <string name="schedule_title">Cronograma</string>
+    <string name="schedule_month">MAYO 2026</string>
+    <string name="schedule_monday">LUN</string>
+    <string name="schedule_tuesday">MAR</string>
+    <string name="schedule_wednesday">MI&#201;</string>
+    <string name="schedule_thursday">JUE</string>
+    <string name="schedule_friday">VIE</string>
+    <string name="schedule_saturday">S&#193;B</string>
+    <string name="schedule_day_12">12</string>
+    <string name="schedule_day_13">13</string>
+    <string name="schedule_day_14">14</string>
+    <string name="schedule_day_15">15</string>
+    <string name="schedule_day_16">16</string>
+    <string name="schedule_day_17">17</string>
+    <string name="schedule_item_time">09:00</string>
+    <string name="schedule_item_ampm">AM</string>
+    <string name="schedule_item_title">Keynote: El futuro del Desarrollo M&#243;vil</string>
+    <string name="schedule_item_speaker">Maria Gonz&#225;lez</string>
+    <string name="schedule_item_place">Auditorio Principal</string>
+    <string name="schedule_item_kotlin">Kotlin Multiplatform Workshop</string>
+    <string name="schedule_item_ai">Inteligencia Artificial en Apps</string>
+    <string name="schedule_item_cloud">Cloud &amp; Firebase para m&#243;viles</string>
+
+    <string name="schedule_detail_close">Cerrar detalle</string>
+    <string name="schedule_detail_share">Compartir evento</string>
+    <string name="schedule_detail_main_icon">Icono principal del evento</string>
+    <string name="schedule_detail_title">Keynote: El futuro del Desarrollo M&#243;vil</string>
+    <string name="schedule_detail_datetime_icon">Fecha y hora</string>
+    <string name="schedule_detail_datetime">Jueves 15 de Mayo, 09:00 AM</string>
+    <string name="schedule_detail_place_icon">Lugar</string>
+    <string name="schedule_detail_place">Auditorio Principal</string>
+    <string name="schedule_detail_speaker_icon">Ponente</string>
+    <string name="schedule_detail_speaker">Maria Gonz&#225;lez</string>
+    <string name="schedule_detail_speaker_role">Google Developer Expert</string>
+    <string name="schedule_detail_description_title">Descripci&#243;n</string>
+    <string name="schedule_detail_description">Conferencia magistral sobre las tendencias y tecnolog&#237;as que est&#225;n transformando el desarrollo m&#243;vil.</string>
+
+    <string name="speakers_title">Ponentes</string>
+    <string name="speaker_image_description">Foto del ponente</string>
+    <string name="speaker_maria">Maria Gonz&#225;lez</string>
+    <string name="speaker_maria_role">Google Developer Expert</string>
+    <string name="speaker_juan">Juan P&#233;rez</string>
+    <string name="speaker_juan_role">Firebase Engineer</string>
+    <string name="speaker_ana">Ana Torres</string>
+    <string name="speaker_ana_role">IA &amp; ML</string>
+    <string name="speaker_carlos">Carlos Ruiz</string>
+    <string name="speaker_carlos_role">UX / UI Design</string>
+    <string name="speaker_luis">Luis Morales</string>
+    <string name="speaker_luis_role">Cloud Computing</string>
+    <string name="speaker_sofia">Sof&#237;a Vega</string>
+    <string name="speaker_sofia_role">Desarrollo M&#243;vil</string>
+    <string name="speaker_detail_about_title">Sobre m&#237;</string>
+    <string name="speaker_detail_about">Desarrolladora Android apasionada por Kotlin, Jetpack Compose y arquitectura de aplicaciones.</string>
+    <string name="speaker_detail_talks_title">Charlas</string>
+    <string name="speaker_detail_talk_one">Keynote: El futuro del Desarrollo M&#243;vil</string>
+    <string name="speaker_detail_talk_two">Kotlin Multiplatform Workshop</string>
+
+    <string name="ubication_title">Ubicaci&#243;n</string>
+    <string name="ubication_map_description">Mapa de ubicaci&#243;n del evento</string>
+    <string name="ubication_place">Centro de Convenciones UNS</string>
+    <string name="ubication_address">Av. Universitaria 1234, Nuevo Chimbote</string>
+    <string name="ubication_detail_title">Centro de Convenciones UNS</string>
+    <string name="ubication_detail_address">Av. Universitaria 1234, Nuevo Chimbote</string>
+    <string name="ubication_how_to_get">C&#243;mo llegar</string>
+    <string name="ubication_call">Llamar</string>
+    <string name="ubication_website">Sitio web</string>
+</resources>

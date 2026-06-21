@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/eventify_background"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:padding="20dp"
+    tools:context=".ui.fragments.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <ImageButton
+            android:id="@+id/btnHomeMenu"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/common_menu"
+            android:padding="10dp"
+            android:src="@drawable/ic_eventify_menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/eventify_text_primary" />
+
+        <TextView
+            android:id="@+id/tvHomeTitulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="@string/home_title"
+            android:textColor="@color/ColorPrimaryDark"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/btnHomeMenu"
+            app:layout_constraintEnd_toStartOf="@id/ivNotificacion"
+            app:layout_constraintStart_toEndOf="@id/btnHomeMenu"
+            app:layout_constraintTop_toTopOf="@id/btnHomeMenu"
+            tools:text="EVENTIFY" />
+
+        <ImageButton
+            android:id="@+id/ivNotificacion"
+            android:layout_width="42dp"
+            android:layout_height="42dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/common_notifications"
+            android:padding="10dp"
+            android:src="@drawable/ic_notificacion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/ColorPrimaryDark" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cvBanner"
+            android:layout_width="0dp"
+            android:layout_height="178dp"
+            android:layout_marginTop="22dp"
+            app:cardCornerRadius="28dp"
+            app:cardElevation="4dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnHomeMenu"
+            app:strokeColor="#4A8BFF"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/bg_hero_gradient"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tvEventoMain"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/home_hero_title"
+                    android:textColor="@color/white"
+                    android:textSize="23sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/ivBanner"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="DevFest 2026" />
+
+                <TextView
+                    android:id="@+id/tvEventoDescripcion"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:lineSpacingExtra="3dp"
+                    android:text="@string/home_hero_subtitle"
+                    android:textColor="#E8EEFF"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toStartOf="@id/ivBanner"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvEventoMain"
+                    tools:text="El evento tecnol&#243;gico que conecta ideas, comunidades y futuro." />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnVerMas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="14dp"
+                    android:minWidth="0dp"
+                    android:paddingStart="18dp"
+                    android:paddingEnd="18dp"
+                    android:text="@string/home_cta"
+                    android:textAllCaps="false"
+                    android:textColor="@color/ColorPrimaryDark"
+                    app:backgroundTint="@color/white"
+                    app:cornerRadius="14dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvEventoDescripcion"
+                    tools:text="Ver m&#225;s" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivBanner"
+                    android:layout_width="124dp"
+                    android:layout_height="124dp"
+                    android:contentDescription="@string/home_hero_title"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_seminario"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Eventify.Rounded20"
+                    tools:src="@drawable/ic_seminario" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <TextView
+            android:id="@+id/tvEventosDestacados"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="26dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/home_featured_title"
+            android:textColor="@color/eventify_text_primary"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/tvVerTodos"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cvBanner"
+            tools:text="Eventos destacados" />
+
+        <TextView
+            android:id="@+id/tvVerTodos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/home_view_all"
+            android:textColor="@color/ColorPrimaryDark"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@id/tvEventosDestacados"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Ver todos" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardEventDevfest"
+            android:layout_width="0dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="14dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/eventify_surface"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvEventosDestacados"
+            app:strokeColor="@color/eventify_outline"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivEventImage"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:contentDescription="@string/event_devfest"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/event1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Eventify.Rounded16"
+                    tools:src="@drawable/event1" />
+
+                <TextView
+                    android:id="@+id/tvEventTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/event_devfest"
+                    android:textColor="@color/eventify_text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/ivEventNext"
+                    app:layout_constraintStart_toEndOf="@id/ivEventImage"
+                    app:layout_constraintTop_toTopOf="@id/ivEventImage"
+                    tools:text="DevFest 2026" />
+
+                <TextView
+                    android:id="@+id/tvEventDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/event_devfest_date"
+                    android:textColor="@color/eventify_text_secondary"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toStartOf="@id/ivEventNext"
+                    app:layout_constraintStart_toStartOf="@id/tvEventTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tvEventTitle"
+                    tools:text="15 - 16 de Mayo, 2026" />
+
+                <TextView
+                    android:id="@+id/tvEventPlace"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/event_devfest_place"
+                    android:textColor="@color/eventify_text_secondary"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toStartOf="@id/ivEventNext"
+                    app:layout_constraintStart_toStartOf="@id/tvEventTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tvEventDate"
+                    tools:text="Lima, Per\u00fa" />
+
+                <ImageView
+                    android:id="@+id/ivEventNext"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:contentDescription="@string/common_next"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_eventify_chevron_right"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/eventify_text_muted" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardEventAndroid"
+            android:layout_width="0dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="12dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/eventify_surface"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardEventDevfest"
+            app:strokeColor="@color/eventify_outline"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivEventImage"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:contentDescription="@string/event_android_summit"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/event2"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Eventify.Rounded16"
+                    tools:src="@drawable/event2" />
+
+                <TextView
+                    android:id="@+id/tvEventTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/event_android_summit"
+                    android:textColor="@color/eventify_text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/ivEventNext"
+                    app:layout_constraintStart_toEndOf="@id/ivEventImage"
+                    app:layout_constraintTop_toTopOf="@id/ivEventImage"
+                    tools:text="Android Summit" />
+
+                <TextView
+                    android:id="@+id/tvEventDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/event_android_summit_date"
+                    android:textColor="@color/eventify_text_secondary"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toStartOf="@id/ivEventNext"
+                    app:layout_constraintStart_toStartOf="@id/tvEventTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tvEventTitle"
+                    tools:text="20 - 21 de Julio, 2026" />
+
+                <TextView
+                    android:id="@+id/tvEventPlace"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/event_android_summit_place"
+                    android:textColor="@color/eventify_text_secondary"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toStartOf="@id/ivEventNext"
+                    app:layout_constraintStart_toStartOf="@id/tvEventTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tvEventDate"
+                    tools:text="Bogot\u00e1, Colombia" />
+
+                <ImageView
+                    android:id="@+id/ivEventNext"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:contentDescription="@string/common_next"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_eventify_chevron_right"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/eventify_text_muted" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardEventKotlin"
+            android:layout_width="0dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="12dp"
+            android:foreground="?attr/selectableItemBackground"
+            app:cardBackgroundColor="@color/eventify_surface"
+            app:cardCornerRadius="22dp"
+            app:cardElevation="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cardEventAndroid"
+            app:strokeColor="@color/eventify_outline"
+            app:strokeWidth="1dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="12dp">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/ivEventImage"
+                    android:layout_width="72dp"
+                    android:layout_height="72dp"
+                    android:contentDescription="@string/event_kotlin_conf"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/event3"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Eventify.Rounded16"
+                    tools:src="@drawable/event3" />
+
+                <TextView
+                    android:id="@+id/tvEventTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="@string/event_kotlin_conf"
+                    android:textColor="@color/eventify_text_primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/ivEventNext"
+                    app:layout_constraintStart_toEndOf="@id/ivEventImage"
+                    app:layout_constraintTop_toTopOf="@id/ivEventImage"
+                    tools:text="Kotlin Conf" />
+
+                <TextView
+                    android:id="@+id/tvEventDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/event_kotlin_conf_date"
+                    android:textColor="@color/eventify_text_secondary"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toStartOf="@id/ivEventNext"
+                    app:layout_constraintStart_toStartOf="@id/tvEventTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tvEventTitle"
+                    tools:text="10 de Junio, 2026" />
+
+                <TextView
+                    android:id="@+id/tvEventPlace"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="@string/event_kotlin_conf_place"
+                    android:textColor="@color/eventify_text_secondary"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toStartOf="@id/ivEventNext"
+                    app:layout_constraintStart_toStartOf="@id/tvEventTitle"
+                    app:layout_constraintTop_toBottomOf="@id/tvEventDate"
+                    tools:text="Virtual" />
+
+                <ImageView
+                    android:id="@+id/ivEventNext"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:contentDescription="@string/common_next"
+                    android:padding="4dp"
+                    android:src="@drawable/ic_eventify_chevron_right"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/eventify_text_muted" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

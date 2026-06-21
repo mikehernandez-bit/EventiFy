@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/eventify_background"
+    android:paddingStart="20dp"
+    android:paddingTop="18dp"
+    android:paddingEnd="20dp"
+    tools:context=".ui.fragments.UbicationFragment">
+
+    <ImageButton
+        android:id="@+id/btnUbicationMenu"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/common_menu"
+        android:padding="10dp"
+        android:src="@drawable/ic_eventify_menu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/eventify_text_primary" />
+
+    <TextView
+        android:id="@+id/tvUbicationTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="center"
+        android:text="@string/ubication_title"
+        android:textColor="@color/ColorPrimaryDark"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/btnUbicationMenu"
+        app:layout_constraintEnd_toStartOf="@id/btnUbicationPin"
+        app:layout_constraintStart_toEndOf="@id/btnUbicationMenu"
+        app:layout_constraintTop_toTopOf="@id/btnUbicationMenu"
+        tools:text="Ubicaci&#243;n" />
+
+    <ImageButton
+        android:id="@+id/btnUbicationPin"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/ubication_title"
+        android:padding="10dp"
+        android:src="@drawable/ic_eventify_location"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/ColorPrimaryDark" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardUbicationMap"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        app:cardCornerRadius="28dp"
+        app:cardElevation="3dp"
+        app:layout_constraintBottom_toTopOf="@id/cardUbicationPlace"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnUbicationMenu"
+        app:strokeColor="@color/eventify_outline"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_map_soft"
+            android:padding="24dp">
+
+            <View
+                android:id="@+id/mapLineHorizontalOne"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:background="#D4DED1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/mapLineHorizontalTwo"
+                android:layout_width="0dp"
+                android:layout_height="2dp"
+                android:layout_marginTop="72dp"
+                android:background="#D4DED1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/mapLineHorizontalOne" />
+
+            <View
+                android:id="@+id/mapLineVerticalOne"
+                android:layout_width="2dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="64dp"
+                android:background="#D4DED1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/mapLineVerticalTwo"
+                android:layout_width="2dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="84dp"
+                android:background="#D4DED1"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivUbicationMapPin"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:contentDescription="@string/ubication_map_description"
+                android:padding="10dp"
+                android:src="@drawable/ic_eventify_location"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/ColorPrimaryDark" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardUbicationPlace"
+        android:layout_width="0dp"
+        android:layout_height="96dp"
+        android:layout_marginBottom="20dp"
+        android:foreground="?attr/selectableItemBackground"
+        app:cardBackgroundColor="@color/eventify_surface"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/eventify_outline"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvUbicationName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-medium"
+                android:text="@string/ubication_place"
+                android:textColor="@color/eventify_text_primary"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/ivUbicationNext"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Centro de Convenciones UNS" />
+
+            <TextView
+                android:id="@+id/tvUbicationAddress"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="@string/ubication_address"
+                android:textColor="@color/eventify_text_secondary"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toStartOf="@id/ivUbicationNext"
+                app:layout_constraintStart_toStartOf="@id/tvUbicationName"
+                app:layout_constraintTop_toBottomOf="@id/tvUbicationName"
+                tools:text="Av. Universitaria 1234, Nuevo Chimbote" />
+
+            <ImageView
+                android:id="@+id/ivUbicationNext"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:contentDescription="@string/common_next"
+                android:padding="5dp"
+                android:src="@drawable/ic_eventify_chevron_right"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/eventify_text_muted" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

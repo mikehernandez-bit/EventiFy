@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navHomeFragment"
+        android:title="Inicio"
+        android:icon="@drawable/ic_eventify_home"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/navScheduleFragment"
+        android:title="Cronograma"
+        android:icon="@drawable/ic_eventify_people"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/navSpeakerFragment"
+        android:title="Expositores"
+        android:icon="@drawable/ic_speaker"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/navMapFragment"
+        android:title="Mapa"
+        android:icon="@drawable/ic_mapas"
+        tools:ignore="HardcodedText" />
+
+    <item
+        android:id="@+id/navPreferencesFragment"
+        android:title="Preferencias"
+        android:icon="@android:drawable/ic_menu_preferences"
+        tools:ignore="HardcodedText" />
+
+</menu>

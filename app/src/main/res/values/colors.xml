@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <color name="ColorPrimary">#4361EE</color>
+    <color name="ColorPrimaryDark">#1D4ED8</color>
+    <color name="ColorAccent">#00B8D4</color>
+
+    <color name="eventify_background">#F6F8FC</color>
+    <color name="eventify_surface">#FFFFFFFF</color>
+    <color name="eventify_surface_variant">#EEF4FF</color>
+    <color name="eventify_text_primary">#111827</color>
+    <color name="eventify_text_secondary">#6B7280</color>
+    <color name="eventify_text_muted">#9CA3AF</color>
+    <color name="eventify_outline">#E5E7EB</color>
+    <color name="eventify_blue_soft">#EAF1FF</color>
+    <color name="eventify_green_soft">#EAF8F1</color>
+    <color name="eventify_yellow_soft">#FFF7E6</color>
+    <color name="eventify_red_soft">#FFEDEF</color>
+    <color name="eventify_green">#16A34A</color>
+    <color name="eventify_yellow">#F59E0B</color>
+    <color name="eventify_red">#E11D48</color>
+</resources>
