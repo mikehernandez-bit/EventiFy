@@ -3,10 +3,9 @@ package com.moviles.eventify.model
 import java.util.Date
 
 class Conference {
-    lateinit var title: String
-    lateinit var description: String
-    lateinit var tag: String
-    lateinit var dateTime: Date
-    lateinit var speaker: String
-
+    var title: String = ""
+    var description: String = ""
+    var tag: String = ""
+    var dateTime: Date = Date()
+    var speaker: String = ""
 }
