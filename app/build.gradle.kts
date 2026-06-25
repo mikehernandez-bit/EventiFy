@@ -53,4 +53,7 @@ dependencies {
     implementation(platform(libs.firebase.bom))
     // Add the dependencies for Firebase products you want to use
     implementation(libs.firebase.analytics)
+    implementation(libs.firebase.firestore)
+    implementation(libs.firebase.firestore.ktx)
+
 }
