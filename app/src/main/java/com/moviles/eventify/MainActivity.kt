@@ -10,7 +10,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.firestore.FirebaseFirestore
 import org.json.JSONArray
 import org.json.JSONObject
-import java.util.Date
+import java.util.Calendar
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,15 +74,18 @@ class MainActivity : AppCompatActivity() {
         """.trimIndent())
 
         val firebaseFirestore = FirebaseFirestore.getInstance()
-        for (i in 0 until jsonArr2.length()){
-            val aux= jsonArr2.get(i) as JSONObject
-            var conference= Conference()
-            conference.title= aux.getString("title")
-            conference.description= aux.getString("description")
-            conference.tag= aux.getString("tag")
-            conference.speaker= aux.getString("speaker")
-            conference.dateTime= Date(aux.getLong("datetime") * 1000)
-            firebaseFirestore.collection("conferences").document().set(conference)
+        for (i in 0 until jsonArr2.length()) {
+            val aux = jsonArr2.get(i) as JSONObject
+            var conference = Conference()
+            conference.title = aux.getString("title")
+            conference.description = aux.getString("description")
+            conference.tag = aux.getString("tag")
+            val cal = Calendar.getInstance()
+            cal.timeInMillis = aux.getLong("datetime") * 1000
+            conference.dateTime = cal.time
+            conference.speaker = aux.getString("speaker")
+
+            firebaseFirestore.collection("Conferences").document().set(conference)
         }
     }
 }
