@@ -1,60 +1,85 @@
 package com.moviles.eventify.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
+import android.widget.ImageButton
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.moviles.eventify.R
+import com.moviles.eventify.data.model.ScheduleItem
+import com.moviles.eventify.ui.adapters.ScheduleAdapter
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class ScheduleFragment : Fragment(R.layout.fragment_schedule) {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ScheduleFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ScheduleFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+        // 1. Obtener referencia del RecyclerView
+        val rvSchedule = view.findViewById<RecyclerView>(R.id.rvSchedule)
+        
+        // 2. Crear datos de prueba (Mock Data)
+        val mockEvents = listOf(
+            ScheduleItem(
+                hour = "09:00",
+                ampm = "AM",
+                title = "Keynote: El futuro del Desarrollo Móvil",
+                speaker = "María González",
+                speakerDesc = "Google Developer Expert en Android",
+                place = "Auditorio Principal",
+                date = "Jueves 15 Mayo, 09:00 AM"
+            ),
+            ScheduleItem(
+                hour = "10:30",
+                ampm = "AM",
+                title = "Taller: Jetpack Compose Avanzado",
+                speaker = "Carlos Mendoza",
+                speakerDesc = "Lead Mobile Architect en Globant",
+                place = "Sala A - Segundo Piso",
+                date = "Jueves 15 Mayo, 10:30 AM"
+            ),
+            ScheduleItem(
+                hour = "12:00",
+                ampm = "PM",
+                title = "Sesión: Novedades en Kotlin 2.x",
+                speaker = "Sebastián Gómez",
+                speakerDesc = "Kotlin Developer Advocate en JetBrains",
+                place = "Auditorio Principal",
+                date = "Jueves 15 Mayo, 12:00 PM"
+            ),
+            ScheduleItem(
+                hour = "03:00",
+                ampm = "PM",
+                title = "Conferencia: Seguridad en APIs Android",
+                speaker = "Ana Laura López",
+                speakerDesc = "CISO de Ciberseguridad en TechBank",
+                place = "Sala B - Primer Piso",
+                date = "Jueves 15 Mayo, 03:00 PM"
+            )
+        )
+
+        // 3. Configurar LayoutManager y Adapter
+        rvSchedule.layoutManager = LinearLayoutManager(requireContext())
+        
+        val adapter = ScheduleAdapter(mockEvents) { clickedItem ->
+            // 4. Mostrar el DialogFragment pasándole los datos al hacer clic en un elemento
+            val dialog = ScheduleDetailDialogFragment.newInstance(
+                title = clickedItem.title,
+                date = clickedItem.date,
+                ubication = clickedItem.place,
+                speaker = clickedItem.speaker,
+                speakerDesc = clickedItem.speakerDesc
+            )
+            dialog.show(parentFragmentManager, "ScheduleDetail")
         }
-    }
+        
+        rvSchedule.adapter = adapter
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_schedule, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ScheduleFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ScheduleFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+        // 5. Vincular otros elementos como botones
+        val btnScheduleMenu = view.findViewById<ImageButton>(R.id.btnScheduleMenu)
+        btnScheduleMenu.setOnClickListener {
+            Toast.makeText(requireContext(), "Menú del Cronograma", Toast.LENGTH_SHORT).show()
+        }
     }
 }

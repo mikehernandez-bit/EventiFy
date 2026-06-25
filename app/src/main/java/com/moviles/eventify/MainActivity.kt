@@ -13,12 +13,14 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         
+        /*
         val navHostFragment = supportFragmentManager
             .findFragmentById(R.id.fragContent) as NavHostFragment
 
         val navController = navHostFragment.navController
 
-        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bnvMenu)
+        val bottomNavigationView=findViewById<BottomNavigationView>(R.id.bnvMenu)
         bottomNavigationView.setupWithNavController(navController)
+        */
     }
 }

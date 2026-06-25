@@ -1,33 +1,31 @@
 package com.moviles.eventify.ui.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.DialogFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.DialogFragment
 import com.moviles.eventify.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ScheduleDetailDialogFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ScheduleDetailDialogFragment : DialogFragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    private var title: String? = null
+    private var date: String? = null
+    private var ubication: String? = null
+    private var speaker: String? = null
+    private var speakerDesc: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+            title = it.getString(ARG_TITLE)
+            date = it.getString(ARG_DATE)
+            ubication = it.getString(ARG_UBICATION)
+            speaker = it.getString(ARG_SPEAKER)
+            speakerDesc = it.getString(ARG_SPEAKER_DESC)
         }
     }
 
@@ -35,27 +33,61 @@ class ScheduleDetailDialogFragment : DialogFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_schedule_detail_dialog, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // 1. Vincular vistas del layout de detalle
+        val tvTitle = view.findViewById<TextView>(R.id.tvScheduleDetailTitle)
+        val tvCalendar = view.findViewById<TextView>(R.id.tvEventCalendar)
+        val tvUbication = view.findViewById<TextView>(R.id.tvEventUbication)
+        val tvSpeaker = view.findViewById<TextView>(R.id.tvEventPersonal)
+        val tvSpeakerDesc = view.findViewById<TextView>(R.id.tvEventPersonalDescripcion)
+        val ivClose = view.findViewById<ImageView>(R.id.ivCancelar)
+        val ivShare = view.findViewById<ImageView>(R.id.ivCompartir)
+
+        // 2. Rellenar con los argumentos si existen
+        tvTitle.text = title ?: "Título no disponible"
+        tvCalendar.text = date ?: "Fecha no disponible"
+        tvUbication.text = ubication ?: "Ubicación no disponible"
+        tvSpeaker.text = speaker ?: "Ponente no disponible"
+        tvSpeakerDesc.text = speakerDesc ?: ""
+
+        // 3. Cerrar el diálogo al pulsar la X
+        ivClose.setOnClickListener {
+            dismiss()
+        }
+
+        // 4. Botón de compartir simulado
+        ivShare.setOnClickListener {
+            Toast.makeText(requireContext(), "Compartiendo evento: $title", Toast.LENGTH_SHORT).show()
+        }
+    }
+
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ScheduleDetailDialogFragment.
-         */
-        // TODO: Rename and change types and number of parameters
+        private const val ARG_TITLE = "arg_title"
+        private const val ARG_DATE = "arg_date"
+        private const val ARG_UBICATION = "arg_ubication"
+        private const val ARG_SPEAKER = "arg_speaker"
+        private const val ARG_SPEAKER_DESC = "arg_speaker_desc"
+
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ScheduleDetailDialogFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        fun newInstance(
+            title: String,
+            date: String,
+            ubication: String,
+            speaker: String,
+            speakerDesc: String
+        ) = ScheduleDetailDialogFragment().apply {
+            arguments = Bundle().apply {
+                putString(ARG_TITLE, title)
+                putString(ARG_DATE, date)
+                putString(ARG_UBICATION, ubication)
+                putString(ARG_SPEAKER, speaker)
+                putString(ARG_SPEAKER_DESC, speakerDesc)
             }
+        }
     }
 }
