@@ -50,7 +50,7 @@ dependencies {
     implementation(libs.androidx.navigation.ui)
 
     // Import the Firebase BoM
-    implementation(platform("com.google.firebase:firebase-bom:34.15.0"))
+    implementation(platform(libs.firebase.bom))
     // Add the dependencies for Firebase products you want to use
-    implementation("com.google.firebase:firebase-analytics")
+    implementation(libs.firebase.analytics)
 }
