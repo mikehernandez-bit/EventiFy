@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_splash_gradient"
-    tools:context=".ui.activities.SplashScreenActivity">
+    tools:context=".view.ui.activities.SplashScreenActivity">
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/cvSplashLogo"

@@ -1,4 +1,4 @@
-package com.moviles.eventify.ui.fragments
+package com.moviles.eventify.view.ui.fragments
 
 import android.os.Bundle
 import android.view.View

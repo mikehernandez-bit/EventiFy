@@ -1,4 +1,4 @@
-package com.moviles.eventify.ui.fragments
+package com.moviles.eventify.view.ui.fragments
 
 import android.os.Bundle
 import android.view.View
@@ -9,7 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.moviles.eventify.R
 import com.moviles.eventify.data.model.ScheduleItem
-import com.moviles.eventify.ui.adapters.ScheduleAdapter
+import com.moviles.eventify.model.Conference
+import com.moviles.eventify.view.adapter.ScheduleAdapter
 
 class ScheduleFragment : Fragment(R.layout.fragment_schedule) {
 
@@ -62,17 +63,15 @@ class ScheduleFragment : Fragment(R.layout.fragment_schedule) {
         // 3. Configurar LayoutManager y Adapter
         rvSchedule.layoutManager = LinearLayoutManager(requireContext())
         
-        val adapter = ScheduleAdapter(mockEvents) { clickedItem ->
-            // 4. Mostrar el DialogFragment pasándole los datos al hacer clic en un elemento
-            val dialog = ScheduleDetailDialogFragment.newInstance(
-                title = clickedItem.title,
-                date = clickedItem.date,
-                ubication = clickedItem.place,
-                speaker = clickedItem.speaker,
-                speakerDesc = clickedItem.speakerDesc
-            )
-            dialog.show(parentFragmentManager, "ScheduleDetail")
-        }
+        val adapter = ScheduleAdapter()
+        adapter.listConference = ArrayList(mockEvents.map { item ->
+            Conference().apply {
+                title = item.title
+                speaker = item.speaker
+                description = item.speakerDesc
+                this.tag = item.place
+            }
+        })
         
         rvSchedule.adapter = adapter
 

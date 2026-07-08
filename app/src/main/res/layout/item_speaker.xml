@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="176dp"
     android:layout_margin="7dp"
-    tools:context=".ui.fragments.SpeakersFragment"
+    tools:context=".view.ui.fragments.SpeakersFragment"
     android:foreground="?attr/selectableItemBackground"
     app:cardBackgroundColor="@color/eventify_surface"
     app:cardCornerRadius="24dp"

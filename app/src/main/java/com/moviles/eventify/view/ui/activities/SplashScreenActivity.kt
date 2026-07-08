@@ -1,4 +1,4 @@
-package com.moviles.eventify.ui.activities
+package com.moviles.eventify.view.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,7 +8,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.moviles.eventify.MainActivity
+import com.moviles.eventify.view.MainActivity
 import com.moviles.eventify.R
 
 class SplashScreenActivity : AppCompatActivity() {
